@@ -14,16 +14,18 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "npm run build:auth-watch && ng serve",
+    "start": "ng serve ngafr-testapp",
     "build": "npm run build:auth",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "build:app": "ng build ngafr-testapp",
     "build:auth": "ng build ngafr-authentication",
     "build:auth-watch": "ng build ngafr-authentication --watch",
-    "build:app": "ng build ngafr-testapp",
     "build:comm": "ng build ngafr-communication",
-    "build:mon": "ng build ngafr-monitoring"
+    "build:comm-watch": "ng build ngafr-communication --watch",
+    "build:mon": "ng build ngafr-monitoring",
+    "build:mon-watch": "ng build ngafr-monitoring --watch"
   },
   "private": true,
   "dependencies": {
