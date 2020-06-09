@@ -1,0 +1,47 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "skipLibCheck": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "ngafr-authentication": [
+        "dist/ngafr-authentication"
+      ],
+      "ngafr-authentication/*": [
+        "dist/ngafr-authentication/*"
+      ],
+      "ngafr-communication": [
+        "dist/ngafr-communication"
+      ],
+      "ngafr-communication/*": [
+        "dist/ngafr-communication/*"
+      ],
+      "ngafr-monitoring": [
+        "dist/ngafr-monitoring"
+      ],
+      "ngafr-monitoring/*": [
+        "dist/ngafr-monitoring/*"
+      ]
+    }
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
+  }
+}
