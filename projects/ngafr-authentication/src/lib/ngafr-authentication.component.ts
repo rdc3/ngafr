@@ -27,7 +27,8 @@ export class NgafrAuthenticationComponent {
         this.loggedIn = true;
         console.log('logged in:', this.loggedIn);
       } else {
-        console.log('logged in: unknown');
+        this.loggedIn = false;
+        console.log('logged in: false');
       }
     });
   }

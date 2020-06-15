@@ -64,43 +64,6 @@
     </div>
 
   </div>
-
-  <!-- Terminal -->
-  <!-- <div class="terminal" [ngSwitch]="selection.value">
-      <pre *ngSwitchDefault>
-  AppModule 
-      const firebaseConfig = {{ '{' }}
-        apiKey: '*******',
-        authDomain: '*******',
-        databaseURL: '*******',
-        projectId: '',
-        storageBucket: '',
-        messagingSenderId: '',
-        appId: '',
-        measurementId: ''
-      {{ '}' }};
-      const authProviders: FirebaseAuthProviders ={{ '{' }}
-        googleAuthProvider: true,
-        emailAuthProvider: true,
-        githubAuthProvider: false,
-        facebookAuthProvider: false,
-        AnonymousAuthProvider: false,
-        phoneAuthProvider: false,
-        twitterAuthProvider: false,
-      {{ '}' }};
-      imports: [
-        ...,
-        NgafrAuthenticationModule.forRoot(firebaseConfig, authProviders),
-        ...
-      ]
-
-  Template
-      &lt;div libNgafrAuth&gt;&lt;/div&gt;
-      </pre>
-      <pre *ngSwitchCase="'material'">TODO:</pre>
-      <pre *ngSwitchCase="'dependency'">TODO:</pre>
-  </div> -->
-  <!-- <router-outlet></router-outlet> -->
   <hr>
   <app-view-selector></app-view-selector>
   <div class="content" [@routerAnimation]="getRouteAnimation(router)">
@@ -111,6 +74,3 @@
   </svg>
 
 </div>
-
-
-<!-- <lib-ngafr-authentication></lib-ngafr-authentication> -->

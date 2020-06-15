@@ -11,7 +11,6 @@ import { BandwidthPlotterDemoComponent } from './graph/bandwidth-plotter-demo/ba
 const routes: Routes = [
   {
     path: 'auth',
-    // component: AuthCodeComponent,
     children: [
       {
         path: 'code',
@@ -27,7 +26,6 @@ const routes: Routes = [
   },
   {
     path: 'video',
-    // component: AuthCodeComponent,
     children: [
       {
         path: 'code',
@@ -43,7 +41,6 @@ const routes: Routes = [
   },
   {
     path: 'graph',
-    // component: AuthCodeComponent,
     children: [
       {
         path: 'code',

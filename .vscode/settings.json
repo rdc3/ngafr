@@ -1,7 +1,12 @@
 {
     "cSpell.words": [
+        "COMMUNICATIONCONFIG",
+        "FIREBASECONF",
+        "Firestore",
         "firebaseui",
         "ngafr",
-        "testapp"
+        "testapp",
+        "videocam",
+        "videotemplate"
     ]
 }

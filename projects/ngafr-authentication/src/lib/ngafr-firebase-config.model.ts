@@ -1,6 +1,6 @@
 import { InjectionToken } from '@angular/core';
 
-export interface FirebaseConf {
+export interface IFirebaseConf {
     apiKey: string;
     authDomain: string;
     databaseURL: string;
@@ -11,7 +11,7 @@ export interface FirebaseConf {
     measurementId: string;
 }
 
-export interface FirebaseAuthProviders {
+export interface IFirebaseAuthProviders {
     googleAuthProvider?: boolean;
     facebookAuthProvider?: boolean;
     emailAuthProvider?: boolean;

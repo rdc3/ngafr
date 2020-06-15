@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FirebaseAuthProviders } from './ngafr-firebase-config.model';
+import { IFirebaseAuthProviders } from './ngafr-firebase-config.model';
 import * as firebase from 'firebase';
 import * as firebaseui from 'firebaseui';
 
@@ -14,7 +14,7 @@ export class FirebaseConfigService {
     credentialHelper: firebaseui.auth.CredentialHelper.NONE
   };
 
-  static getFirebaseUiAuthConfig(authProviders: FirebaseAuthProviders) {
+  static getFirebaseUiAuthConfig(authProviders: IFirebaseAuthProviders) {
     if (authProviders.googleAuthProvider) {
       FirebaseConfigService.firebaseUiAuthConfig.signInOptions.push(firebase.auth.GoogleAuthProvider.PROVIDER_ID);
     }

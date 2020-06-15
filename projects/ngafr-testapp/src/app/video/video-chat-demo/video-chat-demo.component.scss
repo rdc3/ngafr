@@ -1,0 +1,25 @@
+
+button {
+    margin: 5px 0px 0px 10px !important;
+}
+.bitrateGraph{
+    padding: 20px;
+}
+.avatar {
+    width: 40px;
+    border-radius: 20px;
+}
+.online {
+    background-color: green;
+    border-radius: 10px;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+}
+.offline {
+    background-color: red;
+    border-radius: 10px;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+}

@@ -3,18 +3,22 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgafrAuthenticationModule, FirebaseConf, FirebaseAuthProviders } from 'ngafr-authentication';
+import { NgafrAuthenticationModule, IFirebaseConf, IFirebaseAuthProviders } from 'ngafr-authentication';
 import { FireBaseConfig } from '../environments/firebase';
 import { AuthCodeComponent } from './auth/auth-code/auth-code.component';
 import { AuthDemoComponent } from './auth/auth-demo/auth-demo.component';
-import { ViewSelectorComponent } from './common/view-selector/view-selector.component';
+import { ViewSelectorComponent } from './_common/view-selector/view-selector.component';
 import { VideoChatCodeComponent } from './video/video-chat-code/video-chat-code.component';
 import { VideoChatDemoComponent } from './video/video-chat-demo/video-chat-demo.component';
 import { BandwidthPlotterDemoComponent } from './graph/bandwidth-plotter-demo/bandwidth-plotter-demo.component';
 import { BandwidthPlotterCodeComponent } from './graph/bandwidth-plotter-code/bandwidth-plotter-code.component';
+import { ICommunicationConfig } from 'projects/ngafr-communication/src/lib/models/models';
+import { CommunicationConfig } from '../environments/ngafr.config';
+import { NgafrCommunicationModule } from 'ngafr-communication';
 
-const firebaseConfig: FirebaseConf = FireBaseConfig;
-const authProviders: FirebaseAuthProviders = {
+const firebaseConfig: IFirebaseConf = FireBaseConfig;
+const communicationConfig: ICommunicationConfig = CommunicationConfig;
+const authProviders: IFirebaseAuthProviders = {
   googleAuthProvider: true,
   emailAuthProvider: true,
   githubAuthProvider: false,
@@ -40,6 +44,7 @@ const authProviders: FirebaseAuthProviders = {
     BrowserModule,
     NgafrAuthenticationModule,
     NgafrAuthenticationModule.forRoot(firebaseConfig, authProviders),
+    NgafrCommunicationModule.forRoot(communicationConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]

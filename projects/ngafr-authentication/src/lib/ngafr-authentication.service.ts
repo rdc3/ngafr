@@ -15,8 +15,8 @@ export class NgafrAuthenticationService {
   ) { }
   isUserLoggedIn(): Observable<void | firebase.User> {
       return this.afAuth.authState.pipe(map(user => {
-        console.log('User: ', (user && user.displayName) ? user.displayName : 'Guest');
-        this.loggedIn = true;
+        console.log('User: ', (user && user.email) ? user.displayName : 'Guest');
+        this.loggedIn = (!!user && !!user.email);
         this.user = user;
         return user;
       }),

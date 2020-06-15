@@ -1,0 +1,94 @@
+video {
+    border-radius: 7px;
+    margin: 10px 0px 0px 10px;
+    width: 320px;
+    height: 240px;
+    -webkit-background-size:cover; 
+    -moz-background-size:cover; 
+    -o-background-size:cover; 
+    background-size:cover;
+    display: inline-block;
+}
+.videoPanel {
+    border-radius: 7px;
+    margin: 10px 0px 0px 10px;
+    width: 320px;
+    height: 240px;
+    display: table-cell;
+}
+.localVideo {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    position: relative;
+    z-index: -100;
+    background-size: cover;
+}
+.myVideoContainer{
+    position: absolute;
+}
+.videoOverlay{
+    border-radius: 7px 7px 0px 0px;
+    position: relative;
+    left: 10px;
+    top: -245px;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    padding: 1px 5px;
+    height: 30px;
+    font-size: 20px;
+    letter-spacing: .12em;
+    width: 310px;
+}
+.videoOverlayFooter{
+    border-radius: 7px 7px 0px 0px;
+    position: relative;
+    left: 10px;
+    top: -65px;
+    // background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    padding: 1px 5px;
+    height: 30px;
+    font-size: 20px;
+    letter-spacing: .12em;
+    width: 310px;
+}
+.videosContainer{
+    display: table;
+}
+.overlayText {
+    position: absolute;
+    top: 20%;
+    left: 10px;
+    opacity: 0.2;
+    max-width: 80%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.audioIcon {
+    position: relative;
+    left: 260px;
+    cursor: pointer;
+    opacity: 0.6;
+    vertical-align: middle;
+}
+.speakingIcon {
+    position: relative;
+    left: 5px;
+    cursor: pointer;
+    opacity: 0.6;
+    vertical-align: middle;
+}
+.videoIcon {
+    position: relative;
+    left: 260px;
+    cursor: pointer;
+    opacity: 0.6;
+    vertical-align: middle;
+}
+.on {
+    color: #ffffff;
+}
+.off {
+    color: red;
+}

@@ -1,1 +1,18 @@
-<p>video-chat-demo works!</p>
+<div class="videosContainer">
+    <div *ngafrVideoSelf></div>
+    <div *ngafrVideoPeers></div>
+</div>
+
+<br />
+<button id="btnCall" (click)="call()" [disabled]="!connected" type="button" class="btn btn-primary btn-lg">
+    <span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span>
+    Call
+</button>
+<hr>
+<span *ngFor="let peer of onlinePeers" class="videosContainer1">
+    <span class="videoPanel1">
+        <span > <img class="avatar" src="{{peer.avatar}}" alt="{{peer.name}}"></span>
+        <div [class]="peer.state"></div>
+    </span>
+</span>
+<hr>

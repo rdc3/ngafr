@@ -1,15 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { NgModule, InjectionToken, ModuleWithProviders, APP_INITIALIZER } from '@angular/core';
-import { FirebaseUIModule, firebase, firebaseui } from 'firebaseui-angular';
+import { NgModule, InjectionToken, ModuleWithProviders } from '@angular/core';
+import { FirebaseUIModule } from 'firebaseui-angular';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { FirebaseConf, FirebaseAuthProviders } from './ngafr-firebase-config.model';
+import { IFirebaseConf, IFirebaseAuthProviders } from './ngafr-firebase-config.model';
 import { FirebaseConfigService } from './ngafr-firebase-config.service';
 import { NgafrAuthDirective } from './ngafr-authentication.directive';
 import { NgafrAuthenticationComponent } from './ngafr-authentication.component';
 
-export const FirebaseConfigData = new InjectionToken<FirebaseConf>('FIREBASECONF');
+export const FirebaseConfigData = new InjectionToken<IFirebaseConf>('FIREBASECONF');
 
 
 @NgModule({
@@ -26,10 +26,8 @@ export const FirebaseConfigData = new InjectionToken<FirebaseConf>('FIREBASECONF
 })
 
 export class NgafrAuthenticationModule {
-  public static forRoot(firebaseConfig: FirebaseConf, authProviders: FirebaseAuthProviders): ModuleWithProviders {
-    console.log('firebaseConf:', firebaseConfig);
+  public static forRoot(firebaseConfig: IFirebaseConf, authProviders: IFirebaseAuthProviders): ModuleWithProviders {
     const firebaseUiAuthConfig = FirebaseConfigService.getFirebaseUiAuthConfig(authProviders);
-    console.log(firebaseUiAuthConfig.signInOptions);
     return {
       ngModule: NgafrAuthenticationModule,
       providers: [

@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { NgafrAuthenticationComponent, NgafrAuthenticationService } from 'ngafr-authentication';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { routerAnimation } from './app-routing.animation';
 
@@ -9,13 +8,10 @@ import { routerAnimation } from './app-routing.animation';
   styleUrls: ['./app.component.scss'],
   animations: [routerAnimation()],
 })
-export class AppComponent implements OnInit {
-  constructor(private auth: NgafrAuthenticationService) {
+export class AppComponent {
+  constructor() {
   }
   title = 'ngafr-testapp';
-  ngOnInit(): void {
-    // this.auth.signIn();
-  }
   public getRouteAnimation(outlet: RouterOutlet) {
     const res =
       outlet.activatedRouteData.num === undefined

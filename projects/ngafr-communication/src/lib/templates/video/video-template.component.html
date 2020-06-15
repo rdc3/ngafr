@@ -1,0 +1,15 @@
+
+<ng-template #videotemplate>
+    <div class="videoPanel" *ngIf="connected">
+        <video #videoEle class="video {{class}}" [srcObject]="stream" [muted]="muted" autoplay [volume]="volume" playsinline></video>
+        <div class="videoOverlay"><div class="overlayText">{{displayName}}</div>
+            <mat-icon *ngIf="videoOn" class="videoIcon on" (click)="toggleVideo(false)">videocam</mat-icon>
+            <mat-icon *ngIf="!videoOn" class="videoIcon off" (click)="toggleVideo(true)">videocam_off</mat-icon>
+            <mat-icon *ngIf="audioOn" class="audioIcon on" (click)="toggleAudio(false)">volume_up</mat-icon>
+            <mat-icon *ngIf="!audioOn" class="audioIcon off" (click)="toggleAudio(true)">volume__off</mat-icon>
+        </div>
+        <div class="videoOverlayFooter">
+            <mat-icon *ngIf="speaking" class="speakingIcon">mic</mat-icon>
+        </div>
+    </div>
+</ng-template>

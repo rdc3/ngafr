@@ -1,26 +1,20 @@
 {
   "name": "ngafr-authentication",
-  "version": "1.0.3",
-  "description": "This library is used to add the firebase authentication (Email / Password or Social login) using the directive *ngafr-auth in the html template of Angular project.",
+  "version": "1.0.4",
+  "description": "This library is used to add the firebase authentication (Email / Password or Social login) using the directive *ngafrAuth in the html template of Angular project.",
   "author": "Rohan Dcunha",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rohandcunha/NgafrAuthentication.git"
+    "url": "https://github.com/rohandcunha/Ngafr"
   },
   "bugs": {
-    "url": "https://github.com/rohandcunha/NgafrAuthentication/issues"
+    "url": "https://github.com/rohandcunha/Ngafr/issues"
   },
-  "homepage": "https://github.com/rohandcunha/NgafrAuthentication",
+  "homepage": "https://github.com/rohandcunha/Ngafr",
   "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14",
-    "@angular/fire": "^6.0.0",
-    "firebase": "^7.14.6",
-    "firebaseui": "^4.5.0",
-    "firebaseui-angular": "^5.0.0"
-  },
-  "devDependencies": {
     "@angular/fire": "^6.0.0",
     "firebase": "^7.14.6",
     "firebaseui": "^4.5.0",
