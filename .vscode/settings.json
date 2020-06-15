@@ -5,6 +5,7 @@
         "Firestore",
         "firebaseui",
         "ngafr",
+        "onnegotiationneeded",
         "testapp",
         "videocam",
         "videotemplate"

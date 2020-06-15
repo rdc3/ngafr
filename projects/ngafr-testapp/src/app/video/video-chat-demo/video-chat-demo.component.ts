@@ -3,7 +3,7 @@ import { CommunicationConfig } from './../../../environments/ngafr.config';
 import { NgafrCommunicationService } from 'ngafr-communication';
 
 @Component({
-  selector: 'app-video-chat-demo',
+  selector: 'ngafr-testapp-video-chat-demo',
   templateUrl: './video-chat-demo.component.html',
   styleUrls: ['./video-chat-demo.component.scss']
 })
@@ -13,20 +13,17 @@ export class VideoChatDemoComponent implements AfterViewInit, OnDestroy {
   public onlinePeers: any = [];
   constructor(
     private comm: NgafrCommunicationService
-  ) {
-  }
+  ) { }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this.comm.onUserUpdate().subscribe(user => {
       if (!user) { return; }
       this.user = user;
-      if (!this.comm.localStreamStarted()) {
-        this.connect();
-      }
+      this.connect();
     });
   }
 
-  connect() {
+  connect(): void {
     if (CommunicationConfig.allowAudio || CommunicationConfig.allowVideo) {
       this.comm.connect().subscribe(connected => {
         this.connected = connected;
@@ -39,7 +36,7 @@ export class VideoChatDemoComponent implements AfterViewInit, OnDestroy {
     }
   }
 
-  call() {
+  call(): void {
     this.comm.call();
   }
 

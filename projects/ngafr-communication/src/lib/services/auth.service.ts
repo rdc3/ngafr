@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { User } from 'firebase';
 import { database } from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { DbService } from './db.service';
+import { DbService } from './firebase-db.service';
 import { ConnNotifierService } from './conn-notifier.service';
 import { IUserOnline } from '../models/models';
 
@@ -66,5 +66,8 @@ export class AuthService {
     const loggedUser = this.getLoggedInUser();
     loggedUser.connectionState = 'offline';
     this.dbService.setUserOnlineOrOffline(this.notifier.user$.value.id, loggedUser);
+  }
+  resetConnectionId() {
+    this.myConnectionId = Math.floor(Math.random() * 1000000000);
   }
 }

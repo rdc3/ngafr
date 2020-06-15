@@ -1,6 +1,6 @@
 video {
     border-radius: 7px;
-    margin: 10px 0px 0px 10px;
+    margin: 5px;
     width: 320px;
     height: 240px;
     -webkit-background-size:cover; 
@@ -15,6 +15,7 @@ video {
     width: 320px;
     height: 240px;
     display: table-cell;
+    padding: 0px 5px;
 }
 .localVideo {
     -webkit-transform: scaleX(-1);
@@ -29,8 +30,8 @@ video {
 .videoOverlay{
     border-radius: 7px 7px 0px 0px;
     position: relative;
-    left: 10px;
-    top: -245px;
+    margin: 0px auto;
+    top: -250px;
     background-color: rgba(0, 0, 0, 0.2);
     color: white;
     padding: 1px 5px;
@@ -42,9 +43,8 @@ video {
 .videoOverlayFooter{
     border-radius: 7px 7px 0px 0px;
     position: relative;
-    left: 10px;
-    top: -65px;
-    // background-color: rgba(0, 0, 0, 0.2);
+    margin: 0px auto;
+    top: -72px;
     color: white;
     padding: 1px 5px;
     height: 30px;
@@ -91,4 +91,8 @@ video {
 }
 .off {
     color: red;
+}
+.speaking {
+    outline: rgb(2, 61, 172) auto 1px;
+    box-shadow: 0 0 10px rgb(35, 112, 255);
 }

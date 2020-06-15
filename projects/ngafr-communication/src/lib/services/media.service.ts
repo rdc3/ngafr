@@ -1,7 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { ConnNotifierService } from './conn-notifier.service';
-import { CommunicationConfigData } from '../models/config';
 import { ICommunicationConfig } from '../models/models';
+import { CommunicationConfigData } from './communication-config.service';
 
 @Injectable()
 export class MediaService {
@@ -29,8 +29,11 @@ export class MediaService {
             this.notifier.localStream$.next(stream);
           })
           .catch(e => {
+            console.warn('Media devices error...', e);
             this.notifier.localStream$.next(null);
           });
+      } else {
+        console.warn('media devices not found');
       }
     } else {
       this.notifier.localStream$.next(null);

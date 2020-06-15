@@ -9,14 +9,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { AuthService } from './services/auth.service';
 import { DataService } from './services/data.service';
 import { MediaService } from './services/media.service';
-import { DbService } from './services/db.service';
+import { DbService } from './services/firebase-db.service';
 import { ConnectionService } from './services/connection.service';
 import { ConnNotifierService } from './services/conn-notifier.service';
 import { VideoPeersDirective } from './directives/video-peers.directive';
 import { VideoSelfDirective } from './directives/video-self.directive';
-import { CommunicationConfigData } from './models/config';
 import { NgafrCommunicationService } from './ngafr-communication.service';
 import { ICommunicationConfig } from './models/models';
+import { CommunicationConfigData } from './services/communication-config.service';
 
 
 
@@ -24,11 +24,11 @@ import { ICommunicationConfig } from './models/models';
   declarations: [VideoSelfDirective, VideoPeersDirective, VideoTemplateComponent],
   imports: [
     CommonModule,
-    MatIconModule,
     AngularFireModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
+    MatIconModule
   ],
   exports: [VideoSelfDirective, VideoPeersDirective, VideoTemplateComponent],
   providers: [AuthService, DataService, MediaService, ConnNotifierService, DbService, ConnectionService, NgafrCommunicationService],

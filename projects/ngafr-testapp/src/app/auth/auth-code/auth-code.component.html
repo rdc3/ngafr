@@ -2,7 +2,7 @@
   <div class="terminal">
     <pre>
 AppModule 
-    const firebaseConfig = {{ '{' }}
+    const firebaseConfig = &#123;
       apiKey: '*******',
       authDomain: '*******',
       databaseURL: '*******',
@@ -11,8 +11,8 @@ AppModule
       messagingSenderId: '',
       appId: '',
       measurementId: ''
-    {{ '}' }};
-    const authProviders: FirebaseAuthProviders ={{ '{' }}
+    &#125;;
+    const authProviders: FirebaseAuthProviders =&#123;
       googleAuthProvider: true,
       emailAuthProvider: true,
       githubAuthProvider: false,
@@ -20,7 +20,7 @@ AppModule
       AnonymousAuthProvider: false,
       phoneAuthProvider: false,
       twitterAuthProvider: false,
-    {{ '}' }};
+    &#125;;
     imports: [
       ...,
       NgafrAuthenticationModule

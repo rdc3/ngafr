@@ -1,12 +1,5 @@
 import {
-  Directive,
-  OnInit,
-  ComponentFactoryResolver,
-  ViewContainerRef,
-  ChangeDetectorRef,
-  ComponentRef,
-  AfterViewInit,
-  ElementRef
+  Directive, OnInit, ComponentFactoryResolver, ViewContainerRef, ChangeDetectorRef, ElementRef
 } from '@angular/core';
 import { ConnNotifierService } from '../services/conn-notifier.service';
 import { VideoTemplateComponent } from '../templates/video/video-template.component';
@@ -14,38 +7,27 @@ import { VideoTemplateComponent } from '../templates/video/video-template.compon
 @Directive({
   selector: '[ngafrVideoSelf]'
 })
-export class VideoSelfDirective implements OnInit, AfterViewInit{
+export class VideoSelfDirective implements OnInit {
   private vidTemplateComponent: VideoTemplateComponent;
 
   constructor(
     private notifier: ConnNotifierService,
     private componentFactoryResolver: ComponentFactoryResolver,
     private viewContainer: ViewContainerRef,
-    private cdr: ChangeDetectorRef,
-    private elRef: ElementRef
+    private cdr: ChangeDetectorRef
   ) { }
-  ngAfterViewInit(): void {
-    this.notifier.localStream$.subscribe(stream => {
-      if (!stream) {
-        console.log('this.elRef.nativeElement', this.elRef.nativeElement);
-        this.vidTemplateComponent.destroy();
-        // this.viewContainer.clear();
-        return;
-      }
-    });
-  }
 
   ngOnInit(): void {
+
     const componentFactory = this.componentFactoryResolver.resolveComponentFactory(VideoTemplateComponent);
     const componentRef = componentFactory.create(this.viewContainer.injector);
     this.vidTemplateComponent = componentRef.instance;
+
     this.notifier.localStream$.subscribe(stream => {
       if (!stream) {
-        // this.vidTemplateComponent.destroy();
-        // this.viewContainer.clear();
+        this.viewContainer.clear();
         return;
       }
-      this.cdr.markForCheck();
       this.vidTemplateComponent.stream = stream;
       stream.getAudioTracks().forEach(track => {
         this.vidTemplateComponent.audioOn = track.enabled;
@@ -58,7 +40,7 @@ export class VideoSelfDirective implements OnInit, AfterViewInit{
       this.vidTemplateComponent.muted = true;          // To remove echo & feedback
       this.vidTemplateComponent.volume = 0;            // To remove echo & feedback
       this.viewContainer.createEmbeddedView(this.vidTemplateComponent.videoTemplate);
-      console.log('this.elRef.nativeElement3', this.elRef.nativeElement);
+      this.cdr.markForCheck();
     });
   }
 

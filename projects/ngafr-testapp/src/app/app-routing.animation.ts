@@ -51,6 +51,7 @@ export function routerAnimation() {
                             transform: 'translateX(100%)',
                         }),
                     ),
+                    {optional: true}
                 ),
                 // slide new page from -100% to 0% to the right
                 query(

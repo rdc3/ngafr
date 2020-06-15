@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-video-chat-code',
+  selector: 'ngafr-testapp-video-chat-code',
   templateUrl: './video-chat-code.component.html',
   styleUrls: ['./video-chat-code.component.scss']
 })

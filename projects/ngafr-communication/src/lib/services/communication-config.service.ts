@@ -1,7 +1,4 @@
 import { InjectionToken } from '@angular/core';
+import { ICommunicationConfig } from '../models/models';
 
-export const CONFIG = new InjectionToken<Config>('config');
-
-export interface Config {
-    key?: string;
-}
+export const CommunicationConfigData = new InjectionToken<ICommunicationConfig>('COMMUNICATIONCONFIG');

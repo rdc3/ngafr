@@ -1,10 +1,5 @@
 import {
-  Directive,
-  OnInit,
-  ComponentFactoryResolver,
-  ViewContainerRef,
-  ComponentRef,
-  ChangeDetectorRef
+  Directive, OnInit, ComponentFactoryResolver, ViewContainerRef, ComponentRef, ChangeDetectorRef
 } from '@angular/core';
 import { ConnNotifierService } from '../services/conn-notifier.service';
 import { VideoTemplateComponent } from '../templates/video/video-template.component';
@@ -32,7 +27,7 @@ export class VideoPeersDirective implements OnInit {
       connections.forEach(conn => {
         const componentFactory = this.componentFactoryResolver.resolveComponentFactory(VideoTemplateComponent);
         const element = this.componentRefs.filter(e => e.id === conn.metaData.offer.connectionId);
-        let componentRef: ComponentRef<VideoTemplateComponent> = (element) ? element.componenetRef : null;
+        let componentRef: ComponentRef<VideoTemplateComponent> = (element) ? element.componentRef : null;
         if (componentRef) {
           this.componentRefs.find(e => e.id === conn.metaData.offer.connectionId).markForDelete = false;
         } else {
@@ -40,17 +35,17 @@ export class VideoPeersDirective implements OnInit {
           this.componentRefs.push({ id: conn.metaData.offer.connectionId, markForDelete: false, componentRef });
         }
         componentRef.instance.stream = conn.metaData.stream;
-
-        const speechEvents = hark(conn.metaData.stream, {interval: 200, play: false});
+        const speechEvents = hark(conn.metaData.stream, { interval: 200, play: false });
         speechEvents.on('speaking', () => {
           componentRef.instance.speaking = true;
-          this.cdr.markForCheck();
+          this.cdr.detectChanges();
         });
         speechEvents.on('stopped_speaking', () => {
           componentRef.instance.speaking = false;
-          this.cdr.markForCheck();
+          this.cdr.detectChanges();
         });
 
+        componentRef.instance.class = 'peerVideo';
         componentRef.instance.muted = false;
         componentRef.instance.volume = 0.9;
         conn.metaData.stream.getAudioTracks().forEach(track => {

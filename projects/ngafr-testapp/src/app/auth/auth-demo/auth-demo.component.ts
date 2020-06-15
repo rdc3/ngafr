@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-auth-demo',
+  selector: 'ngafr-testapp-auth-demo',
   templateUrl: './auth-demo.component.html',
-  styleUrls: ['./auth-demo.component.scss']
+  styleUrls: []
 })
 export class AuthDemoComponent implements OnInit {
 

@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgafrAuthenticationModule, IFirebaseConf, IFirebaseAuthProviders } from 'ngafr-authentication';
 import { FireBaseConfig } from '../environments/firebase';
 import { AuthCodeComponent } from './auth/auth-code/auth-code.component';
 import { AuthDemoComponent } from './auth/auth-demo/auth-demo.component';
@@ -14,6 +13,7 @@ import { BandwidthPlotterDemoComponent } from './graph/bandwidth-plotter-demo/ba
 import { BandwidthPlotterCodeComponent } from './graph/bandwidth-plotter-code/bandwidth-plotter-code.component';
 import { ICommunicationConfig } from 'projects/ngafr-communication/src/lib/models/models';
 import { CommunicationConfig } from '../environments/ngafr.config';
+import { NgafrAuthenticationModule, IFirebaseConf, IFirebaseAuthProviders } from 'ngafr-authentication';
 import { NgafrCommunicationModule } from 'ngafr-communication';
 
 const firebaseConfig: IFirebaseConf = FireBaseConfig;
@@ -42,7 +42,7 @@ const authProviders: IFirebaseAuthProviders = {
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,
-    NgafrAuthenticationModule,
+    // NgafrAuthenticationModule,  // uncomment this line if you get compilation errors in the testapp demo template
     NgafrAuthenticationModule.forRoot(firebaseConfig, authProviders),
     NgafrCommunicationModule.forRoot(communicationConfig)
   ],

@@ -1,6 +1,46 @@
 
   <div class="terminal">
     <pre>
-TODO:
+APIs :
+  * connect(): Observable&lt;boolean&gt;;
+      - Starts the webcam
+      - Make sure that the user is online before calling the connect method.
+  * onUserUpdate(): BehaviorSubject&lt;IUserOnline&gt;;
+      - Gives the firebase logged in user. Null if the user is not logged in
+  * onPeersOnline(): Observable&lt;IUserOnline[]&gt;;
+      - Gives the peers who are currently logged in.
+  * call(): void;
+      - Starts the call with all the online peers
+  * disconnect(): void;
+      - Disconnects the current ongoing call.
+
+Usage :
+  AppModule:
+      import &#123; NgafrAuthenticationModule,
+        IFirebaseConf, IFirebaseAuthProviders &#125; from 'ngafr-authentication';
+      import &#123; NgafrCommunicationModule &#125; from 'ngafr-communication';
+      @NgModule( &#123;
+        imports: [
+          ...,
+          NgafrAuthenticationModule   // Refer ngafr-authentication
+            .forRoot(firebaseConfig, authProviders),
+          NgafrCommunicationModule.forRoot(communicationConfig)
+          ...
+        ]&#125;)
+
+  Component:
+      constructor( private comm: NgafrCommunicationService ) &#123; &#125;
+      ngAfterViewInit() &#123;
+        this.comm.onUserUpdate().subscribe(user => &#123;
+          this.comm.connect().subscribe();
+        &#125;);
+      &#125;
+      call() &#123; this.comm.call(); &#125;
+
+  Template:
+      &lt;div *ngafrVideoSelf&gt;&lt;/div&gt;
+      &lt;div *ngafrVideoPeers&gt;&lt;/div&gt;
+      &lt;button (click)="call()"/&gt;
     </pre>
+    
 </div>

@@ -9,10 +9,13 @@
     Call
 </button>
 <hr>
-<span *ngFor="let peer of onlinePeers" class="videosContainer1">
-    <span class="videoPanel1">
-        <span > <img class="avatar" src="{{peer.avatar}}" alt="{{peer.name}}"></span>
-        <div [class]="peer.state"></div>
+<ng-container  *ngIf="connected">
+    <span *ngFor="let peer of onlinePeers" class="videosContainer1">
+        <span class="videoPanel1">
+            <span > <img class="avatar" src="{{peer.avatar}}" alt="{{peer.name}}"></span>
+            <div [class]="peer.state"></div>
+        </span>
     </span>
-</span>
+</ng-container>
+<div *ngIf="!connected"> Kindly login & allow video access to enable the call option</div>
 <hr>

@@ -5,7 +5,6 @@ import {
   ElementRef,
   ChangeDetectorRef,
   ViewChild,
-  OnDestroy,
   AfterViewInit
 } from '@angular/core';
 
@@ -16,7 +15,7 @@ import {
 })
 export class VideoTemplateComponent implements AfterViewInit {
   @ViewChild('videotemplate', { static: true }) videoTemplate: TemplateRef<any>;
-  @ViewChild('videoEle', { read: ElementRef, static: true }) videoEle: ElementRef<HTMLVideoElement>;
+  @ViewChild('videoEle', { read: ElementRef, static: false }) videoEle: ElementRef<any>;
   @Input() displayName = '';
   @Input() stream: MediaStream;
   @Input() class: string;
@@ -30,18 +29,15 @@ export class VideoTemplateComponent implements AfterViewInit {
     private cdr: ChangeDetectorRef,
     private elRef: ElementRef) { }
   ngAfterViewInit(): void {
-    console.log('ngAfterViewInit', this.videoEle, this.videoTemplate.elementRef.nativeElement)
-    console.log('this.elRef.nativeElement1', this.elRef.nativeElement);
+    console.log('ngAfterViewInit', this.elRef.nativeElement);
+    this.cdr.detectChanges();
   }
   destroy(): void {
-    console.log('destroy', this.videoEle, this.videoTemplate.elementRef.nativeElement)
-    console.log('this.elRef.nativeElement2', this.elRef.nativeElement);
-    this.cdr.markForCheck();
+    this.cdr.detectChanges();
     if (!this.videoEle) {
         return;
     }
     (this.videoEle.nativeElement.srcObject as MediaStream).getTracks().forEach(track => {
-      console.log('track.readyState', track.readyState);
       if (track.readyState === 'live') {
           track.stop();
       }
@@ -49,7 +45,7 @@ export class VideoTemplateComponent implements AfterViewInit {
   }
 
   toggleAudio = (unMute: boolean) => {
-    this.cdr.markForCheck();
+    this.cdr.detectChanges();
     if (!this.videoEle) {
         return;
     }
@@ -59,7 +55,7 @@ export class VideoTemplateComponent implements AfterViewInit {
     });
   }
   toggleVideo = (unMute: boolean) => {
-    this.cdr.markForCheck();
+    this.cdr.detectChanges();
     if (!this.videoEle) {
         return;
     }
