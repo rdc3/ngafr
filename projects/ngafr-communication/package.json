@@ -1,16 +1,16 @@
 {
   "name": "ngafr-communication",
-  "version": "0.0.1",
+  "version": "1.0.2",
   "description": "This library can be used to add WebRTC based video conferencing functionalities to your app using structural directives.",
   "author": "Rohan Dcunha",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rohandcunha/Ngafr"
+    "url": "https://github.com/rdc3/Ngafr"
   },
   "bugs": {
-    "url": "https://github.com/rohandcunha/Ngafr/issues"
+    "url": "https://github.com/rdc3/Ngafr/issues"
   },
-  "homepage": "https://github.com/rohandcunha/Ngafr",
+  "homepage": "https://github.com/rdc3/Ngafr",
   "license": "MIT",
   "peerDependencies": {
     "@angular/animations": "~8.2.3",
@@ -25,6 +25,7 @@
     "firebaseui-angular": "^5.0.0",
     "hammerjs": "^2.0.8",
     "hark": "^1.2.3",
+    "ngafr-authentication": "^1.0.4",
     "rxjs": "~6.4.0"
   }
 }

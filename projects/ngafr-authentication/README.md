@@ -5,10 +5,17 @@ This library is used to add the firebase authentication (Email / Password or Soc
 ## Dependencies
     * [angular-fire-ui](https://www.npmjs.com/package/angular-fire-ui)
 
-## Usage
+## Install
+### ngafr-authentication package installation
+    ```cmd
+    npm i ngafr-authentication  --save
+    ```
+### Installation with dependencies
+    ```cmd
+    npm i firebase firebaseui @angular/fire firebaseui-angular ngafr-authentication --save
+    ```
 
-To add this library to your project
-* Run `npm i ngafr-authentication`
+## Usage
 * Update AppModule 
     ```ts
     const firebaseConfig = {
@@ -21,7 +28,7 @@ To add this library to your project
         appId: '',
         measurementId: ''
     };
-    // Choose only the required Auth providers & omit the rest from this list
+    // Only choose the required Auth providers & omit the rest from this list
     const authProviders: FirebaseAuthProviders ={
         googleAuthProvider: true,
         emailAuthProvider: false,

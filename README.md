@@ -11,10 +11,10 @@ Angular libraries to create a WebRTC video conferencing app using firebase
 
 ## USAGE
 ### ngafr-authentication
-    [ReadMe](https://github.com/rdc3/ngafr/blob/master/projects/ngafr-authentication/README.md)
+[ReadMe](https://github.com/rdc3/ngafr/blob/master/projects/ngafr-authentication/README.md)
 
 ### ngafr-communication
-    [ReadMe](https://github.com/rdc3/ngafr/blob/master/projects/ngafr-communication/README.md)
+[ReadMe](https://github.com/rdc3/ngafr/blob/master/projects/ngafr-communication/README.md)
 
 ## Development - Application
 ### Download Source code
